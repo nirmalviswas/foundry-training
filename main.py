@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-
+def compute_status(delay_days: int) -> str:
+    """Classify a shipment's delay into on_time, minor_delay, or major_delay."""
+    if delay_days == 0:
 app = FastAPI()
 shipments_db = {}
 
